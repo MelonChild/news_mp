@@ -1,0 +1,12 @@
+<template name="HotNewsCell" >
+  <view class="hotNewsCell-container" >
+      <view class="hotNewsCell-topView">
+        <view class="hotNewsCell-topView-right-content">
+          <text class="hotNewsCell-title">{{title}}</text>
+          <text class="hotNewsCell-Subtitle">{{desc}}</text>
+          <text class="lastUpdateTime">{{created_at}}</text>
+        </view>
+        <image class="hotNewsCell-topView-left-image" src="https://mp.weixin.com{{thumbnail}}"></image>
+      </view>
+  </view>
+</template>

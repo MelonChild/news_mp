@@ -1,0 +1,24 @@
+<import src="template/list.wxml" />
+<!--index.wxml-->
+<view>
+  <swiper wx:if="{{display}}" catchtap="onSwiperTap" vertical="{{false}}" indicator-dots="true" autoplay="true" interval="5000">
+    <block wx:for="{{carrouselsAr}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+      <swiper-item>
+        <image id='{{index}}' data-path="{{item.article_id}}" src="https://mp.weixin.com{{item.path}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="spaceSeparateView"></view>
+  <view class="yaowen-container">
+    <text class="yaowen">· 资讯 ·</text>
+  </view>
+  <block wx:for="{{list}}" wx:for-item="item" wx:key="key">
+    <view class="hotNewsList-container" catchtap="tapHotNewsCell" data-path='{{item.id}}'>
+      <template is="HotNewsCell" data="{{...item}}" ></template>
+    </view>
+  </block>
+</view>
+<view class='footer' wx:if="{{footer}}">
+  <text class="">-- 我也是有底线的 --</text>
+</view>
